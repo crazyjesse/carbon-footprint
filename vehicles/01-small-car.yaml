@@ -1,0 +1,5 @@
+name: "Car"
+litres_per_100km: 7
+co2_per_litre: 2.024
+num_passengers: 5
+travel_by: 'land'

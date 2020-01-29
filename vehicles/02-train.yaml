@@ -1,0 +1,5 @@
+name: "Train"
+litres_per_100km: 209
+co2_per_litre: 2.222
+num_passengers: 360
+travel_by: 'land'

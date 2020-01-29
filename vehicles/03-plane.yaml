@@ -1,0 +1,5 @@
+name: "Plane"
+litres_per_100km: 1860
+co2_per_litre: 2.046
+num_passengers: 416
+travel_by: 'air'
