@@ -6,7 +6,7 @@ import yaml
 
 @click.command()
 @click.option('--distance', required=True, type=click.FloatRange(min=0))
-@click.option('--air-distance', type=click.FloatRange(min=0))
+@click.option('--air-distance', required=True, type=click.FloatRange(min=0))
 @click.option('--figure', type=click.BOOL, default=False)
 def main(distance, air_distance, figure):
     vehicle_list = make_emissions_dict(distance, air_distance)
@@ -84,7 +84,7 @@ def make_figure(vehicle_list):
     names = [vehicle['name'] for vehicle in vehicle_list]
 
     # design, colours, and labels
-    y_ticks = [10 * round(emission / 10) for emission in emissions]
+    y_ticks = [round(emission) for emission in emissions]
     y_label = r'\textbf{CO$_2$ emissions (kg / passenger)}'
     y_limits = (0, 150)
     x_limits = (-1, len(vehicle_list))

@@ -4,13 +4,13 @@
 
 1. Clone the repo
 2. `python3 -m venv env`
-3. `pip install -r requirements`
+3. `source env/bin/activate`
+3. `pip install -r requirements.txt`
 
 ### Usage
 
 Run the following:
 ```bash
-source env/bin/activate
 python -m trip_calculation --distance DISTANCE --air-distance AIR_DISTANCE --figure TRUE_OR_FALSE
 ```
 
