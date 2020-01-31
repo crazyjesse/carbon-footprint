@@ -80,13 +80,13 @@ def make_figure(vehicle_list):
     mpl.rc('axes', linewidth=1.5)
     mpl.rcParams['text.latex.preamble'] = [r'\usepackage{sfmath} \boldmath']
 
-    emissions = [vehicle['emissions'] for vehicle in vehicle_list]
+    emissions = [round(vehicle['emissions']) for vehicle in vehicle_list]
     names = [vehicle['name'] for vehicle in vehicle_list]
 
     # design, colours, and labels
-    y_ticks = [round(emission) for emission in emissions]
+    y_ticks = emissions
     y_label = r'\textbf{CO$_2$ emissions (kg / passenger)}'
-    y_limits = (0, 150)
+    y_limits = (0, max(emissions) + 20)
     x_limits = (-1, len(vehicle_list))
     bar_width = 0.75
     colours = ('#377eb8', '#4daf4a', '#e41a1c')
@@ -136,7 +136,8 @@ def make_figure(vehicle_list):
     fig = plt.gcf()
     fig.set_size_inches(5, 4.5)
     fig.tight_layout()
-    plt.savefig('plots/emissions.pdf')
+    plt.savefig('plots/emissions.pdf', dpi=300)
+    plt.savefig('plots/emissions.png', dpi=300)
 
 
 if __name__ == '__main__':
