@@ -80,7 +80,7 @@ def make_figure(vehicle_list):
     mpl.rc('axes', linewidth=1.5)
     mpl.rcParams['text.latex.preamble'] = [r'\usepackage{sfmath} \boldmath']
 
-    emissions = [round(vehicle['emissions']) for vehicle in vehicle_list]
+    emissions = [10 * round(vehicle['emissions'] / 10) for vehicle in vehicle_list]
     names = [vehicle['name'] for vehicle in vehicle_list]
 
     # design, colours, and labels
