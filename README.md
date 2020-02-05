@@ -2,22 +2,33 @@
 
 ### Install
 
+The commands listed below will:
 1. Clone the repo
-2. `python3 -m venv env`
-3. `source env/bin/activate`
-3. `pip install -r requirements.txt`
+2. Create a virtual environment
+3. Activate the virtual environment
+4. Install the required packages
+
+```bash
+git clone https://github.com/carbon-footprint/carbon-footprint.git
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
+
 
 ### Usage
 
-Run the following:
+To run the script type the command:
 ```bash
-python -m trip_calculation --distance DISTANCE --air-distance AIR_DISTANCE --figure TRUE_OR_FALSE
+python3 footprint.py
+```
+The program will prompt you for information about your trip.
+
+Optionally you can add the `--figure` flag to generate PNG and PDF figures of the emissions data.
+```bash
+python3 footprint.py --figure
 ```
 
-The options set:
-* `distance`: the travel distance by land
-* `air-distance`: the travel distance by air
-* `figure`: if the PDF figure should be generated
 
 ### Vehicles
 
