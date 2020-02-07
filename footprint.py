@@ -57,7 +57,7 @@ def load_vehicle_data():
         assert isinstance(vehicle['co2_per_litre'], (int, float))
         assert isinstance(vehicle['num_passengers'], (int, float))
         assert isinstance(vehicle['travel_by'], str)
-        assert vehicle['travel_by'] in ('air', 'land')
+        assert vehicle['travel_by'] in ('air', 'land', 'sea')
 
     vehicle_data = list()
     vehicle_files = os.listdir('vehicles')
